@@ -21,12 +21,15 @@ const url=require('url');
 const express = require('express');
 const app = express();
 const process=require('process');
-const path=require('path')
-var server=http.createServer(function(req,res){
-	res.writeHead(200,{'Content-Type': 'text/plain;charset=utf-8'});
-	res.end('app')
-});
-server.listen(process.env.PORT||8083)
+const path=require('path');
+app.get('/',(req,res)=>{
+	res.send('apppp')
+})
+// var server=http.createServer(function(req,res){
+// 	res.writeHead(200,{'Content-Type': 'text/plain;charset=utf-8'});
+// 	res.end('app')
+// });
+app.listen(process.env.PORT||8083)
 
 //WebSocket连接监听
 // io.on('connection', function (socket) {

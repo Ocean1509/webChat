@@ -5,14 +5,15 @@ const path=require('path');
 const server=http.createServer(app);
 const fs=require('fs');
 //const io=require('socket.io').listen(server);
-app.use(express.static(path.join(__dirname,'static')))
-server.listen(process.env.PROT||8083);
+// app.use(express.static(path.join(__dirname,'static')))
+// server.listen(process.env.PROT||8083);
 //设置日志级别
 //io.set('log level', 1); 
 app.get('/',(req,res)=>{
 	 res.sendfile(__dirname+'/index.html');
 	//res.send('又一次')
 });
+app.listen(process.env.PORT||8083)
 
 // const http=require('http');
 // const url=require('url');

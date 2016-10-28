@@ -18,11 +18,13 @@
 
 const http=require('http');
 const url=require('url');
+const express = require('express');
+const app = express();
 const process=require('process');
 const path=require('path')
 var server=http.createServer(function(req,res){
 	res.writeHead(200,{'Content-Type': 'text/plain;charset=utf-8'});
-	res.end('发送成功')
+	res.end('app')
 });
 server.listen(process.env.PORT||8083)
 

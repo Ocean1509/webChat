@@ -1,35 +1,29 @@
-// const http=require('http');
-// const express=require('express');
-// const app=express();
-// const path=require('path');
-// const server=http.createServer(app);
-// const fs=require('fs');
-// //const io=require('socket.io').listen(server);
-// console.log(__dirname);
-// console.log(path.join(__dirname,'static'))
-// app.use(express.static(path.join(__dirname,'static')))
-// server.listen(process.env.PROT||8083);
-// //设置日志级别
-// //io.set('log level', 1); 
-// app.get('/',(req,res)=>{
-// 	// res.sendfile(__dirname+'/index.html');
-// 	res.send('又一次')
-// });
-
 const http=require('http');
-const url=require('url');
-const express = require('express');
-const app = express();
-const process=require('process');
+const express=require('express');
+const app=express();
 const path=require('path');
+const server=http.createServer(app);
+const fs=require('fs');
+//const io=require('socket.io').listen(server);
+app.use(express.static(path.join(__dirname,'static')))
+server.listen(process.env.PROT||8083);
+//设置日志级别
+//io.set('log level', 1); 
 app.get('/',(req,res)=>{
-	res.sendfile(__dirname+'/index.html');
-})
-// var server=http.createServer(function(req,res){
-// 	res.writeHead(200,{'Content-Type': 'text/plain;charset=utf-8'});
-// 	res.end('app')
-// });
-app.listen(process.env.PORT||8083)
+	 res.sendfile(__dirname+'/index.html');
+	//res.send('又一次')
+});
+
+// const http=require('http');
+// const url=require('url');
+// const express = require('express');
+// const app = express();
+// const process=require('process');
+// const path=require('path');
+// app.get('/',(req,res)=>{
+// 	res.sendfile(__dirname+'/index.html');
+// })
+// app.listen(process.env.PORT||8083)
 
 //WebSocket连接监听
 // io.on('connection', function (socket) {

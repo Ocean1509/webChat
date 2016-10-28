@@ -1,7 +1,7 @@
 $(function(){
 	var input=$('#input')
 	console.log(window.location)
-	var socket=io.connect(window.location.host);
+	var socket=io.connect(window.location.hostname);
 	socket.on('connect',()=>{
 		console.log('-----------')
 		$('#content').append('<li>连接中...</li>')

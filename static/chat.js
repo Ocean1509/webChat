@@ -2,10 +2,10 @@ $(function(){
 	var input=$('#input')
 	console.log(window.location.hostname)
 	var socket=io.connect(window.location.hostname);
-	socket.on('connect',()=>{
+	socket.on('connect',function(){
 		console.log('-----------')
 		$('#content').append('<li>连接中...</li>')
-	})
+	});
 
 	socket.on('login',function(data){
 		var content='<li>'+data+',欢迎您</li>'
@@ -34,7 +34,7 @@ $(function(){
 		/* Act on the event */
 		if(e.keyCode=='13'){
 			var value=$('#input').val()
-			// socket.emit('message',value);
+			socket.emit('message',value);
 			$('#input').val('')
 		}
 	});

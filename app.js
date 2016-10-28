@@ -4,13 +4,13 @@ const app=express();
 const path=require('path');
 const server=http.createServer(app);
 const fs=require('fs');
-const io=require('socket.io').listen(server);
+//const io=require('socket.io').listen(server);
 console.log(__dirname);
 console.log(path.join(__dirname,'static'))
 app.use(express.static(path.join(__dirname,'static')))
 server.listen(process.env.PROT||8081);
 //设置日志级别
-io.set('log level', 1); 
+//io.set('log level', 1); 
 app.get('/',(req,res)=>{
 	res.sendfile(__dirname+'/index.html');
 });

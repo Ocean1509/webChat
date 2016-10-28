@@ -1,6 +1,7 @@
 $(function(){
 	var input=$('#input')
-	var socket=io.connect('https://serene-stream-69562.herokuapp.com/');
+	console.log(window.location)
+	var socket=io.connect(window.location.host);
 	socket.on('connect',()=>{
 		console.log('-----------')
 		$('#content').append('<li>连接中...</li>')

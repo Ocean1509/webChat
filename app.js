@@ -16,15 +16,20 @@ app.get('/',(req,res)=>{
 	res.send('又一次成功')
 });
 
-// const http=require('http');
-// const url=require('url');
-// const process=require('process');
-// const path=require('path')
-// var server=http.createServer(function(req,res){
-// 	res.writeHead(200,{'Content-Type': 'text/plain;charset=utf-8'});
-// 	res.end('发送成功')
-// });
-// server.listen(process.env.PORT||8083)
+const http=require('http');
+const url=require('url');
+const express=require('express');
+const app=express()
+const process=require('process');
+const path=require('path')
+var server=http.createServer(function(req,res){
+	res.writeHead(200,{'Content-Type': 'text/plain;charset=utf-8'});
+	res.end('发送成功')
+});
+app.get('/',(req,res)=>{
+	res.send('成功')
+})
+server.listen(process.env.PORT||8083)
 
 //WebSocket连接监听
 // io.on('connection', function (socket) {

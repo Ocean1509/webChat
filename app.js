@@ -8,7 +8,7 @@ const io=require('socket.io').listen(server);
 console.log(__dirname);
 console.log(path.join(__dirname,'static'))
 app.use(express.static(path.join(__dirname,'static')))
-server.listen(8080)
+server.listen(process.env.PROT||8080);
 //设置日志级别
 io.set('log level', 1); 
 app.get('/',(req,res)=>{

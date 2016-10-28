@@ -30,13 +30,18 @@ $(function(){
 		console.log('--------------')
 		$('#content').append(content)
 	});
-	input.keypress(function(e) {
-		/* Act on the event */
-		if(e.keyCode=='13'){
-			var value=$('#input').val()
-			socket.emit('message',value);
-			$('#input').val('')
-		}
-	});
+	// input.keypress(function(e) {
+	// 	/* Act on the event */
+	// 	if(e.keyCode=='13'){
+	// 		var value=$('#input').val()
+	// 		socket.emit('message',value);
+	// 		$('#input').val('')
+	// 	}
+	// });
+	$('#J_submit').click(function(){
+		var value=$('#input').val();
+		socket.emit('message',value);
+		$('#input').val('')
+	})
 })
 

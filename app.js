@@ -2,10 +2,10 @@ const http=require('http');
 const express=require('express');
 const app=express();
 const path=require('path');
-const server=http.createServer(app);
+//const server=http.createServer(app);
 const fs=require('fs');
-//const io=require('socket.io').listen(server);
-// app.use(express.static(path.join(__dirname,'static')))
+const io=require('socket.io').listen(app);
+app.use(express.static(path.join(__dirname,'static')))
 // server.listen(process.env.PROT||8083);
 //设置日志级别
 //io.set('log level', 1); 
